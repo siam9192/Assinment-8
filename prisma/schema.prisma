@@ -22,7 +22,7 @@ model Book {
 model Member {
  memberId String @unique @id @default(uuid())
  name String
- email String
+ email String @unique
  phone String
  memberShipDate DateTime
  borrowRecords BorrowRecord[]
