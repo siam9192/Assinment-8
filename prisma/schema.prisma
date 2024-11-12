@@ -32,8 +32,8 @@ model Member {
 
 model BorrowRecord {
   borrowId String @id @default(uuid())
-  borrowDate String
-  returnDate String 
+  borrowDate DateTime
+  returnDate DateTime
   memberId String
   member Member @relation(fields: [memberId],references: [memberId])  
   @@map("borrow-records")

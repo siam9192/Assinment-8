@@ -10,8 +10,8 @@ app.use(express.json());
 
 
 app.use('/api', routes);
-app.use((err)=>{
-  console.log(err.statusMessage)
+app.use((err,req,res)=>{
+  res
 });
 
 app.use((req, res) => {
