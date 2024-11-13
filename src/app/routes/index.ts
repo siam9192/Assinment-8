@@ -23,7 +23,7 @@ const moduleRoutes: TModuleRoutes = [
     router:BorrowRouter
   },
   {
-    path:'/borrow',
+    path:'/return',
     router:ReturnRouter
   }
 ];

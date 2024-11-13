@@ -12,8 +12,8 @@ const SendResponse  = <T>(res:Response,jsonData:{
 })=>{
   res.status(jsonData.statusCode).json({
     success:jsonData.success,
+    status:jsonData.statusCode,
     message:jsonData.message,
-    meta:jsonData.meta||null,
     data:jsonData.data||null||undefined
   })
 }

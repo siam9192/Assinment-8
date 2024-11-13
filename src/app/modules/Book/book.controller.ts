@@ -6,7 +6,6 @@ import httpStatus from "http-status-codes"
 
 
 const createBook = catchAsync(async(req:Request,res:Response)=>{
-    console.log(req.body)
     const result = await BookService.createBookIntoDB(req.body)
     SendResponse(res,{success:true,statusCode:httpStatus.CREATED,message:'Book created successfully',data:result})
 })

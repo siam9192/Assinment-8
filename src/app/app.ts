@@ -11,7 +11,8 @@ app.use(express.json());
 
 
 app.use('/api', routes);
-app.use(ErrorHandler);
+
+
 
 app.use((req, res) => {
   if (req.url === '/') {
@@ -25,4 +26,7 @@ app.use((req, res) => {
     message: 'Not Found',
   });
 });
+
+
+app.use(ErrorHandler);
 export default app;

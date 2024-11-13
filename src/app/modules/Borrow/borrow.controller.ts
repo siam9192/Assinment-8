@@ -12,15 +12,22 @@ const createBorrow = catchAsync(async(req:Request,res:Response)=>{
 
 
 const returnBook = catchAsync(async(req:Request,res:Response)=>{
-    const result = await BorrowService.createBorrowIntoDB(req.body)
-    SendResponse(res,{success:true,statusCode:httpStatus.CREATED,message:"Book returned successfully",data:result})
+    const result = await BorrowService.returnBorrowBook(req.body)
+    SendResponse(res,{success:true,statusCode:httpStatus.OK,message:"Book returned successfully",data:result})
+})
+
+
+const  getOverdueBorrowList= catchAsync(async(req:Request,res:Response)=>{
+    const result = await BorrowService.getOverdueBorrowList()
+    SendResponse(res,{success:true,statusCode:httpStatus.OK,message:result.length ?"Overdue borrow list fetched":"No overdue books",data:result})
 })
 
 
 
 const BorrowController = {
     createBorrow,
-    returnBook
+    returnBook,
+    getOverdueBorrowList
 }
 
 export default BorrowController

@@ -4,9 +4,13 @@ const port = 5000;
 
 
 function main (){
- app.listen(port,()=>{
-    console.log('Server is running')
- })
+ try {
+   app.listen(port,()=>{
+      console.log('Server is running')
+   })
+ } catch (error) {
+   console.log(error)
+ }
 }
 
 
