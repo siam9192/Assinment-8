@@ -3,7 +3,7 @@
 A backend API for managing a library’s book inventory, member records, and borrowing/return transactions. This system provides CRUD functionality for books and members, allows for book borrowing and returns, and tracks overdue books.
 
 ## 🚀 Live URL
-**[Library Management System - API](https://your-live-url-here.com)**
+**[Library Management System - API](https://assinment-8-seven.vercel.app)**
 
 ## 🛠 Technology Stack & Packages
 

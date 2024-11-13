@@ -11,13 +11,14 @@
     "zod": "^3.23.8"
   },
   "scripts": {
+    "postinstall": "prisma generate",
     "dev": "ts-node-dev --respawn --transpile-only ./src/app/server.ts",
-     "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
+    "prettier": "prettier --ignore-path .gitignore --write \"./src/**/*.+(js|ts|json)\"",
     "prettier:fix": "npx prettier --write src"
-
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "prisma": "^5.22.0"
   }
 }

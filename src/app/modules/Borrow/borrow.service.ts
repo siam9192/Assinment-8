@@ -85,12 +85,14 @@ const getOverdueBorrowList = async () => {
       },
     },
   });
+ 
   const overdueData = overdueRecords.map((record) => ({
     borrowId: record.borrowId,
     bookTitle: record.book.title,
     borrowerName: record.member.name,
     overdueDays: differenceInDays(new Date().valueOf(), record.borrowDate) - 14,
   }));
+  
   return overdueData;
 };
 

@@ -9,7 +9,7 @@ const createMemberIntoDB = async (data: Member) => {
   if (member) {
     throw new AppError(httpStatus.NOT_ACCEPTABLE, 'User is already exists in this email');
   }
-
+  
   return await prisma.member.create({ data });
 };
 
