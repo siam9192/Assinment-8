@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import routes from './routes';
 import { GlobalErrorHandler } from './Errors/globalErrorHandler';
+import { ErrorHandler } from './Errors/ErrorHandler';
 
 const app = express();
 
@@ -10,9 +11,7 @@ app.use(express.json());
 
 
 app.use('/api', routes);
-app.use((err,req,res)=>{
-  res
-});
+app.use(ErrorHandler);
 
 app.use((req, res) => {
   if (req.url === '/') {

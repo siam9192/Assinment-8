@@ -16,6 +16,7 @@ model Book {
   publishedYear Int
   totalCopies Int
   availableCopies Int
+  borrowRecords BorrowRecord[]
   @@map("books")
 }
 
@@ -33,8 +34,10 @@ model Member {
 model BorrowRecord {
   borrowId String @id @default(uuid())
   borrowDate DateTime
-  returnDate DateTime
+  returnDate DateTime?
+  bookId String
   memberId String
+  book Book @relation(fields: [bookId],references: [bookId])  
   member Member @relation(fields: [memberId],references: [memberId])  
   @@map("borrow-records")
 }

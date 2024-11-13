@@ -1,5 +1,7 @@
 import { BorrowRecord } from "@prisma/client"
 import prisma from "../../shared/prisma"
+import AppError from "../../Errors/AppError"
+import httpStatus from "../../shared/http-status"
 
 const createBorrowIntoDB = async (data:BorrowRecord)=>{
   data.borrowDate = new Date()
@@ -18,7 +20,7 @@ const returnBorrowBook  = async ({borrowId}:{borrowId:string})=>{
   const returnDate = new Date().getTime()
   
   if((returnDate - borrowDate)>(14*24*60*60*1000)){
-    
+    throw new AppError(httpStatus.NOT_ACCEPTABLE,'Return date expired')
   }
  
   return await prisma.borrowRecord.update({
