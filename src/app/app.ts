@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import routes from './routes';
-import { GlobalErrorHandler } from './Errors/globalErrorHandler';
 import { ErrorHandler } from './Errors/ErrorHandler';
 
 const app = express();
@@ -9,10 +8,8 @@ const app = express();
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-
 app.use('/api', routes);
-
-
+app.use(ErrorHandler);
 
 app.use((req, res) => {
   if (req.url === '/') {
@@ -23,10 +20,8 @@ app.use((req, res) => {
   res.status(404).json({
     success: false,
     statusCode: 404,
-    message: 'Not Found',
+    message: 'Route Not Found',
   });
 });
 
-
-app.use(ErrorHandler);
 export default app;

@@ -29,23 +29,19 @@ A backend API for managing a library’s book inventory, member records, and bor
 
 ## 🌟 Key Features & Functionality
 
-### 📖 Book Management (CRUD)
+
 - Create, read, update, and delete book records.
 - Track total and available copies of each book.
 
-### 👤 Member Management (CRUD)
 - Add, retrieve, update, and delete member records.
 - Email validation to prevent duplicate member entries.
 
-### 📚 Borrow and Return Books
 - Allows borrowing and returning books while tracking available copies.
 - Prevents borrowing if no copies are available.
 
-### ⏰ Overdue Book Tracking
 - Tracks books that are overdue past a 14-day borrowing period.
 - Returns a list of overdue items with borrower details and overdue days.
 
-### 🛠 Error Handling
 - Consistent error responses across the API with HTTP status codes and error messages.
 
 

@@ -1,9 +1,4 @@
-import {
-	ReasonPhrases,
-	StatusCodes,
-	getReasonPhrase,
-	getStatusCode,
-} from 'http-status-codes';
-const httpStatus = StatusCodes
+import { ReasonPhrases, StatusCodes, getReasonPhrase, getStatusCode } from 'http-status-codes';
+const httpStatus = StatusCodes;
 
-export default httpStatus
+export default httpStatus;

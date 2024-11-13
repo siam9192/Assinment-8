@@ -1,27 +1,18 @@
-import { Router } from "express";
-import MemberController from "./member.controller";
+import { Router } from 'express';
+import MemberController from './member.controller';
 
+const router = Router();
 
-const router = Router()
+router.post('/', MemberController.createBook);
 
+router.get('/', MemberController.getAllMembersFromDB);
 
-router.post('/',MemberController.createBook)
+router.get('/:id', MemberController.getMemberByIdFromDB);
 
+router.put('/:id', MemberController.updateBookById);
 
+router.delete('/:id', MemberController.deleteBookById);
 
-router.get('/',MemberController.getAllMembersFromDB)
+const MemberRouter = router;
 
-
-router.get('/:id',MemberController.getMemberByIdFromDB)
-
-
-router.put('/:id',MemberController.updateBookById)
-
-
-router.delete('/:id',MemberController.deleteBookById)
-
-
-
-const MemberRouter = router
-
-export default MemberRouter
+export default MemberRouter;
